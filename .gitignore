@@ -1,0 +1,23 @@
+# ignore IDE/hidden/OS cache files
+.*
+*~
+nbproject
+nb-configuration.xml
+Session.vim
+*.tmproj
+*.tmproject
+.DS_Store
+tmtags
+Thumbs.db
+Desktop.ini
+# ignore Composer downloads
+/vendor
+*.lock
+# keep some hiddens
+!.htaccess
+!/.gitignore
+.travis.yml
+# ignore keys
+
+lib/Interceptor/*.p12
+lib/Interceptor/*.pem

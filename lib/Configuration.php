@@ -1,6 +1,6 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client;
+namespace RC\Simulacion\MX\Client;
 
 class Configuration
 {
@@ -18,7 +18,7 @@ class Configuration
     
     protected $host = '';
     
-    protected $userAgent = 'RcSimulacionClientPhp-Codegen/1.0.0/php';
+    protected $userAgent = 'RC\Simulacion\MX-Codegen/1.0.0/php';
     
     protected $debug = false;
     
@@ -159,7 +159,7 @@ class Configuration
     
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (RcSimulacionClientPhp\Client) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (RC\Simulacion\MX\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1.0.0' . PHP_EOL;

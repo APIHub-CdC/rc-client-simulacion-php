@@ -1,6 +1,6 @@
 # rc-simulacion-client-php
 
-<p>Esta API simula el reporte del historial crediticio, el cumplimiento de pago de los compromisos que la persona ha adquirido con entidades financieras, no financieras e instituciones comerciales que dan crédito o participan en actividades afines al crédito.<br/><img src='https://www.circulodecredito.com.mx/assets/img/logocirculo.png' height='37' width='100'/></p><br/>
+<p>Esta API simula el reporte del historial crediticio, el cumplimiento de pago de los compromisos que la persona ha adquirido con entidades financieras, no financieras e instituciones comerciales que dan crédito o participan en actividades afines al crédito.<br/><img src='https://github.com/APIHub-CdC/imagenes-cdc/blob/master/circulo_de_credito-apihub.png' height='37' width='160'/><br/>
 
 ## Requisitos
 
@@ -43,58 +43,61 @@ Al iniciar sesión seguir os siguientes pasos:
 
 ### Paso 2. Capturar los datos de la petición
 
-Los siguientes datos a modificar se encuentran en ***test/Api/ReporteDeCrditoApiTest.php***
+Los siguientes datos a modificar se encuentran en **test/Api/ApiTest.php**
 
-Es importante contar con el setUp() que se encargará de inicializar la url. Modificar la URL ***('the_url')*** de la petición del objeto ***$config***, como se muestra en el siguiente fragmento de código:
+Es importante contar con el setUp() que se encargará de inicializar la petición. Por tanto, se debe modificar la URL (**the_url**) y la API KEY (**your_x_api_key**), como se muestra en el siguiente fragmento de código:
 
 ```php
-   public function setUp()
-    {
-        $config = new \RcSimulacionClientPhp\Client\Configuration();
-        $config->setHost('the_url');
-        $client = new \GuzzleHttp\Client(['verify'=>false]);
-        $this->apiInstance = new \RcSimulacionClientPhp\Client\Api\ReporteDeCrditoApi($client, $config);
-        $this->x_api_key = "your_api_key";
-        
-    }
+public function setUp()
+{
+    $config = new Configuration();
+    $config->setHost('the_url');
+    $this->x_api_key = "your_x_api_key";
+    $client = new Client();
+    $this->apiInstance = new Instance($client,$config);
+}
 ```
-```php
 
-<?php
+Para la petición se deberá modificar el siguiente fragmento de código con los datos correspondientes:
+
+> **NOTA:** Para más ejemplos de simulación, consulte la colección de Postman.
+
+```php
 /**
-* Este es el método que se será ejecutado en la prueba ubicado en path/to/repository/test/Api/ReporteDeCrditoConsolidadoApiTest.php
+* Este método será ejecutado en la prueba ubicado en path/to/repository/test/Api/ApiTest.php
 */
 public function testGetFullReporte()
 {
-     $x_full_report = true;
-      $request = new \RcSimulacionClientPhp\Client\Model\PersonaPeticion();
-      
-      $request->setPrimerNombre("xxxxx");
-      $request->setApellidoPaterno("xxxxx");
-      $request->setApellidoMaterno("xxxxx");
-      $request->setRfc("xxxxx");
-      $request->setFechaNacimiento("yyyy-MM-dd");
-      $request->setNacionalidad("MX");
+    $x_full_report = true;
+    $request = new PersonaPeticion();
+    
+    $request->setPrimerNombre("JUAN");
+    $request->setApellidoPaterno("PRUEBA");
+    $request->setApellidoMaterno("SIETE");
+    $request->setRfc("PUAC800107");
+    $request->setFechaNacimiento("1980-01-07");
+    $request->setNacionalidad("MX");
 
-      $domicilio = new \RcSimulacionClientPhp\Client\Model\DomicilioPeticion();
-      $domicilio->setDireccion("xxxxx");
-      $domicilio->setColoniaPoblacion("xxxxx");
-      $domicilio->setCiudad("xxxxx");
-      $domicilio->setCp("xxxxx");
-      $domicilio->setDelegacionMunicipio("xxxxx");
-      $domicilio->setEstado("DF");
-      $request->setDomicilio($domicilio); 
-      
-      try {
-          $result = $this->apiInstance->getReporte($this->x_api_key, $request, $x_full_report);
-          $this->assertNotNull($result);
-          echo "testGetFullReporte finished\n";
-      } catch (Exception $e) {
-          echo 'Exception when calling ReporteDeCrditoConsolidadoApi->getReporte: ', $e->getMessage(), PHP_EOL;
-      }
+    $domicilio = new DomicilioPeticion();
+    $domicilio->setDireccion("INSURGENTES SUR 1001");
+    $domicilio->setColoniaPoblacion("INSURGENTES SUR");
+    $domicilio->setCiudad("CIUDAD DE MEXICO");
+    $domicilio->setCp("11230");
+    $domicilio->setDelegacionMunicipio("CIUDAD DE MEXICO");
+    $domicilio->setEstado("DF");
+    $request->setDomicilio($domicilio); 
+    
+    try {
+        $result = $this->apiInstance->getReporte($this->x_api_key, $request, $x_full_report);
+        $this->assertNotNull($result);
+        print_r($result);
+        echo "testGetFullReporte finished\n";
+    } catch (Exception $e) {
+        echo 'Exception when calling ApiTest->getReporte: ', $e->getMessage(), PHP_EOL;
+    }
 }
-?>
 ```
+
 ## Pruebas unitarias
 
 Para ejecutar las pruebas unitarias:
@@ -102,5 +105,8 @@ Para ejecutar las pruebas unitarias:
 ```sh
 ./vendor/bin/phpunit
 ```
+
+---
+[CONDICIONES DE USO, REPRODUCCIÓN Y DISTRIBUCIÓN](https://github.com/APIHub-CdC/licencias-cdc)
 
 [1]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos

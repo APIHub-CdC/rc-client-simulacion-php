@@ -1,9 +1,9 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
+namespace RC\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class PersonaRespuesta implements ModelInterface, ArrayAccess
 {
@@ -21,9 +21,9 @@ class PersonaRespuesta implements ModelInterface, ArrayAccess
         'curp' => 'string',
         'numero_seguridad_social' => 'int',
         'nacionalidad' => 'string',
-        'residencia' => '\RcSimulacionClientPhp\Client\Model\CatalogoResidencia',
-        'estado_civil' => '\RcSimulacionClientPhp\Client\Model\CatalogoEstadoCivil',
-        'sexo' => '\RcSimulacionClientPhp\Client\Model\CatalogoSexo',
+        'residencia' => '\RC\Simulacion\MX\Client\Model\CatalogoResidencia',
+        'estado_civil' => '\RC\Simulacion\MX\Client\Model\CatalogoEstadoCivil',
+        'sexo' => '\RC\Simulacion\MX\Client\Model\CatalogoSexo',
         'clave_elector_ife' => 'string',
         'numero_dependientes' => 'int',
         'fecha_defuncion' => 'string'

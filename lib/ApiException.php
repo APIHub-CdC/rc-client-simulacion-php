@@ -1,6 +1,6 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client;
+namespace RC\Simulacion\MX\Client;
 
 use \Exception;
 

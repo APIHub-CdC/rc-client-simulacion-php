@@ -1,7 +1,7 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+namespace RC\Simulacion\MX\Client\Model;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class CatalogoResidencia
 {
