@@ -45,7 +45,7 @@ Al iniciar sesión seguir os siguientes pasos:
 
 Los siguientes datos a modificar se encuentran en **test/Api/ApiTest.php**
 
-Es importante contar con el setUp() que se encargará de inicializar la petición. Por tanto, se debe modificar la URL (**url_API**) y la API KEY (**x_api_key**), como se muestra en el siguiente fragmento de código:
+Es importante contar con el setUp() que se encargará de inicializar la petición. Por tanto, se debe modificar la URL (**the_url**) y la API KEY (**your_x_api_key**), como se muestra en el siguiente fragmento de código:
 
 ```php
 public function setUp()
