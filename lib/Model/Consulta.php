@@ -1,9 +1,9 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
+namespace RC\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class Consulta implements ModelInterface, ArrayAccess
 {
@@ -18,9 +18,9 @@ class Consulta implements ModelInterface, ArrayAccess
         'direccion_otorgante' => 'string',
         'telefono_otorgante' => 'string',
         'tipo_credito' => 'string',
-        'clave_unidad_monetaria' => '\RcSimulacionClientPhp\Client\Model\CatalogoMoneda',
+        'clave_unidad_monetaria' => '\RC\Simulacion\MX\Client\Model\CatalogoMoneda',
         'importe_credito' => 'float',
-        'tipo_responsabilidad' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoResponsabilidad',
+        'tipo_responsabilidad' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoResponsabilidad',
         'id_domicilio' => 'string',
         'servicios' => 'string'
     ];

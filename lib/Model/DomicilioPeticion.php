@@ -1,9 +1,9 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
+namespace RC\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class DomicilioPeticion implements ModelInterface, ArrayAccess
 {
@@ -16,12 +16,12 @@ class DomicilioPeticion implements ModelInterface, ArrayAccess
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\RcSimulacionClientPhp\Client\Model\CatalogoEstados',
+        'estado' => '\RC\Simulacion\MX\Client\Model\CatalogoEstados',
         'cp' => 'string',
         'fecha_residencia' => 'string',
         'numero_telefono' => 'string',
-        'tipo_domicilio' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoDomicilio',
-        'tipo_asentamiento' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoAsentamiento'
+        'tipo_domicilio' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoDomicilio',
+        'tipo_asentamiento' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoAsentamiento'
     ];
     
     protected static $apihubFormats = [

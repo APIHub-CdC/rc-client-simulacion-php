@@ -1,6 +1,6 @@
 {
-    "name": "apihub-cdc/rc-simulacion-client-php",
-    "description": "",
+    "name": "apihub-cdc/rc-simulacion-client",
+    "description": "Esta API simula el Reporte de Crédito.",
     "keywords": [
         "apihub",
         "php",
@@ -8,6 +8,13 @@
         "api"
     ],
     "homepage": "http://developer.circulodecredito.com.mx",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "APIHub and contributors",
+            "homepage": "https://github.com/APIHub-CdC"
+        }
+    ],
     "require": {
         "php": ">=5.5",
         "ext-curl": "*",
@@ -22,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "RcSimulacionClientPhp\\Client\\" : "lib/" }
+        "psr-4": { "RC\\Simulacion\\MX\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "RcSimulacionClientPhp\\Client\\" : "test/" }
+        "psr-4": { "RC\\Simulacion\\MX\\Client\\" : "test/" }
     }
 }

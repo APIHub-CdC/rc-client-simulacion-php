@@ -1,9 +1,9 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
+namespace RC\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class Empleo implements ModelInterface, ArrayAccess
 {
@@ -17,14 +17,14 @@ class Empleo implements ModelInterface, ArrayAccess
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\RcSimulacionClientPhp\Client\Model\CatalogoEstados',
+        'estado' => '\RC\Simulacion\MX\Client\Model\CatalogoEstados',
         'cp' => 'int',
         'numero_telefono' => 'string',
         'extension' => 'string',
         'fax' => 'string',
         'puesto' => 'string',
         'fecha_contratacion' => 'string',
-        'clave_moneda' => '\RcSimulacionClientPhp\Client\Model\CatalogoMoneda',
+        'clave_moneda' => '\RC\Simulacion\MX\Client\Model\CatalogoMoneda',
         'salario_mensual' => 'float',
         'fecha_ultimo_dia_empleo' => 'string',
         'fecha_verificacion_empleo' => 'string'
