@@ -1,9 +1,9 @@
 <?php
 
-namespace RcSimulacionClientPhp\Client\Model;
+namespace RC\Simulacion\MX\Client\Model;
 
 use \ArrayAccess;
-use \RcSimulacionClientPhp\Client\ObjectSerializer;
+use \RC\Simulacion\MX\Client\ObjectSerializer;
 
 class Credito implements ModelInterface, ArrayAccess
 {
@@ -17,13 +17,13 @@ class Credito implements ModelInterface, ArrayAccess
         'clave_otorgante' => 'string',
         'nombre_otorgante' => 'string',
         'cuenta_actual' => 'string',
-        'tipo_responsabilidad' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoResponsabilidad',
-        'tipo_cuenta' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoCuenta',
-        'tipo_credito' => '\RcSimulacionClientPhp\Client\Model\CatalogoTipoCredito',
-        'clave_unidad_monetaria' => '\RcSimulacionClientPhp\Client\Model\CatalogoMoneda',
+        'tipo_responsabilidad' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoResponsabilidad',
+        'tipo_cuenta' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoCuenta',
+        'tipo_credito' => '\RC\Simulacion\MX\Client\Model\CatalogoTipoCredito',
+        'clave_unidad_monetaria' => '\RC\Simulacion\MX\Client\Model\CatalogoMoneda',
         'valor_activo_valuacion' => 'int',
         'numero_pagos' => 'int',
-        'frecuencia_pagos' => '\RcSimulacionClientPhp\Client\Model\CatalogoFrecuenciaPago',
+        'frecuencia_pagos' => '\RC\Simulacion\MX\Client\Model\CatalogoFrecuenciaPago',
         'monto_pagar' => 'float',
         'fecha_apertura_cuenta' => 'string',
         'fecha_ultimo_pago' => 'string',
@@ -41,7 +41,7 @@ class Credito implements ModelInterface, ArrayAccess
         'historico_pagos' => 'string',
         'fecha_reciente_historico_pagos' => 'string',
         'fecha_antigua_historico_pagos' => 'string',
-        'clave_prevencion' => '\RcSimulacionClientPhp\Client\Model\CatalogoPrevencion',
+        'clave_prevencion' => '\RC\Simulacion\MX\Client\Model\CatalogoPrevencion',
         'total_pagos_reportados' => 'int',
         'peor_atraso' => 'float',
         'fecha_peor_atraso' => 'string',
@@ -49,7 +49,7 @@ class Credito implements ModelInterface, ArrayAccess
         'monto_ultimo_pago' => 'double',
         'id_domicilio' => 'string',
         'servicios' => 'string',
-        'can' => '\RcSimulacionClientPhp\Client\Model\CAN'
+        'can' => '\RC\Simulacion\MX\Client\Model\CAN'
     ];
     
     protected static $apihubFormats = [
