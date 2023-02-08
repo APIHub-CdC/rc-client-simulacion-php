@@ -1307,16 +1307,16 @@ class RCApi
         );
     }
     
-    public function getReporte($x_api_key, $request, $x_full_report = null)
+    public function getReporte($x_api_key, $request)
     {
-        list($response) = $this->getReporteWithHttpInfo($x_api_key, $request, $x_full_report);
+        list($response) = $this->getReporteWithHttpInfo($x_api_key, $request);
         return $response;
     }
     
-    public function getReporteWithHttpInfo($x_api_key, $request, $x_full_report = null)
+    public function getReporteWithHttpInfo($x_api_key, $request)
     {
         $returnType = '\RC\Simulacion\MX\Client\Model\Respuesta';
-        $request = $this->getReporteRequest($x_api_key, $request, $x_full_report);
+        $request = $this->getReporteRequest($x_api_key, $request);
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -1419,9 +1419,9 @@ class RCApi
         }
     }
     
-    public function getReporteAsync($x_api_key, $request, $x_full_report = null)
+    public function getReporteAsync($x_api_key, $request)
     {
-        return $this->getReporteAsyncWithHttpInfo($x_api_key, $request, $x_full_report)
+        return $this->getReporteAsyncWithHttpInfo($x_api_key, $request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1429,10 +1429,10 @@ class RCApi
             );
     }
     
-    public function getReporteAsyncWithHttpInfo($x_api_key, $request, $x_full_report = null)
+    public function getReporteAsyncWithHttpInfo($x_api_key, $request)
     {
         $returnType = '\RC\Simulacion\MX\Client\Model\Respuesta';
-        $request = $this->getReporteRequest($x_api_key, $request, $x_full_report);
+        $request = $this->getReporteRequest($x_api_key, $request);
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
@@ -1469,7 +1469,7 @@ class RCApi
             );
     }
     
-    protected function getReporteRequest($x_api_key, $request, $x_full_report = null)
+    protected function getReporteRequest($x_api_key, $request)
     {
         if ($x_api_key === null || (is_array($x_api_key) && count($x_api_key) === 0)) {
             throw new \InvalidArgumentException(
@@ -1490,9 +1490,7 @@ class RCApi
         if ($x_api_key !== null) {
             $headerParams['x-api-key'] = ObjectSerializer::toHeaderValue($x_api_key);
         }
-        if ($x_full_report !== null) {
-            $headerParams['x-full-report'] = ObjectSerializer::toHeaderValue($x_full_report);
-        }
+
         $_tempBody = null;
         if (isset($request)) {
             $_tempBody = $request;
